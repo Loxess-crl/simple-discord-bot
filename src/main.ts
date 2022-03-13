@@ -1,10 +1,13 @@
 import { TOKEN } from './config';
-import Discord from 'discord.js';
-import { onMessage, onReady } from './app-listeners';
+import { Client, Intents } from 'discord.js';
+import { onInteractionCreate, onMessageCreate, onReady } from './listeners';
 
-const client = new Discord.Client({ intents: [] });
+const client = new Client({
+  intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
+});
 
 onReady(client);
-onMessage(client);
+onMessageCreate(client);
+onInteractionCreate(client);
 
 client.login(TOKEN);
