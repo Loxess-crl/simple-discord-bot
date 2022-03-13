@@ -1,17 +1,10 @@
-import { TOKEN } from './config';
+import { TOKEN } from 'app-config';
 import Discord from 'discord.js';
+import { onMessage, onReady } from 'app-listeners';
 
-const client = new Discord.Client({ intents: [Discord.Intents.FLAGS.GUILDS] });
+const client = new Discord.Client({ intents: [] });
 
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user?.tag}!`);
-});
-
-client.on('message', (msg) => {
-  console.log(msg);
-  if (msg.content === 'ping') {
-    msg.reply('pong');
-  }
-});
+onReady(client);
+onMessage(client);
 
 client.login(TOKEN);
