@@ -1,6 +1,6 @@
 import { TOKEN } from './config';
 import Discord from 'discord.js';
-import { onMessage, onReady } from 'app-listeners';
+import { onMessage, onReady } from './app-listeners';
 
 const client = new Discord.Client({ intents: [] });
 
