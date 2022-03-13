@@ -1,4 +1,4 @@
-import { TOKEN } from './app-config';
+import { TOKEN } from './config';
 import Discord from 'discord.js';
 import { onMessage, onReady } from 'app-listeners';
 
