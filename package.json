@@ -5,9 +5,7 @@
   "author": "David Armendariz",
   "license": "MIT",
   "scripts": {
-    "register-slash-commands": "ts-node src/register-slash-commands.ts",
-    "listen": "nodemon src/main.ts",
-    "dev": "run-s register-slash-commands listen"
+    "dev": "nodemon src/main.ts"
   },
   "dependencies": {
     "@discordjs/rest": "^0.3.0",
